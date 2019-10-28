@@ -1,6 +1,6 @@
 function [groundTruth,Z,model] = gen_data_many_targets(para,targetTracks)
 
-K = 100;
+K = max([targetTracks.deathTime]);
 
 % Generate model parameters, ground truth and measurements 
 x_dim = 4;
