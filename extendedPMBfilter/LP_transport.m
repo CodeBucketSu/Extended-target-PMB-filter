@@ -9,6 +9,7 @@ Aeq2 = repmat(eye(N),1,H);
 c(isinf(c)) = max(c(~isinf(c)))+1e12;
 Aeq = [Aeq1;Aeq2];
 
+% can be largely speed up by using the Gurobi solver
 options = optimoptions('linprog','Algorithm','dual-simplex','Display','off');
 [x,Cmin] = linprog(c,[],[],Aeq,beq,zeros(1,H*N),ones(1,H*N),options);
 q = reshape(x,N,H)';
