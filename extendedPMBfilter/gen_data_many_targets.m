@@ -102,7 +102,7 @@ model.threshold_r = 1e-3;
 model.threshold_u = 1e-3;
 model.threshold_recycle = 0.1;      % recycling threshold
 % MBs that correspond to the likelihood 1-model.threshold_w are kept
-model.threshold_w = 1e-2;           
+model.threshold_w = 1e-3;           
 model.M = 20;                       % M-best data associations, called by Murty
 model.newTrackMergingThreshold = 5; % new track merging threshold in PMB
 model.GGIWMergingThreshold = 10;    % Bernoulli merging threshold in PMB
