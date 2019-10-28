@@ -48,7 +48,9 @@ ggiw_mb_hat = newMultiBernoulli(n_exist,Wmbm,r_exist,alpha_exist,...
 maxIterations = 1e1;
 numIterations = 1;
 minCost = costSum;
+
 while(numIterations < maxIterations)
+    numIterations = numIterations + 1;
     for i = 1:num_mb
         r_exist(i,:) = ggiw_mbm{i}.r(newAssignment(i,:));
         alpha_exist(i,:) = ggiw_mbm{i}.alpha(newAssignment(i,:));
@@ -69,7 +71,6 @@ while(numIterations < maxIterations)
     if costSumTemp < minCost
         minCost = costSumTemp;
     end
-    numIterations = numIterations + 1;
 end
 
 % Merge Bernoullis that correspond to the same new target, i.e.,
