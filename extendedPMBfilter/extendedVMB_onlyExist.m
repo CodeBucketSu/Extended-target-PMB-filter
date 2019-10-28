@@ -72,6 +72,7 @@ maxIterations = 1e1;
 
 % Variational approximation using Linear Programming
 while(numIterations < maxIterations)
+    numIterations = numIterations + 1;
     % M-step
     [r_temp,alpha_temp,beta_temp,x_temp,P_temp,v_temp,V_temp] = Mstep2...
         (h_r,h_alpha,h_beta,h_x,h_P,h_v,h_V,phi_hat,n_exist,model);
@@ -87,7 +88,6 @@ while(numIterations < maxIterations)
         ggiw_mb_hat.r = r_temp;ggiw_mb_hat.alpha = alpha_temp;ggiw_mb_hat.beta = beta_temp;
         ggiw_mb_hat.x = x_temp;ggiw_mb_hat.P = P_temp;ggiw_mb_hat.v = v_temp;ggiw_mb_hat.V = V_temp;
     end
-    numIterations = numIterations + 1;
 end
 
 % Merge Bernoullis that correspond to the same new target, i.e.,
