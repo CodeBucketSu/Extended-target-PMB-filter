@@ -27,8 +27,6 @@ model.H = [1 0 0 0;0 1 0 0];
 sigma_v = 0.1;
 model.D= eye(z_dim)*sigma_v^2; 
 model.R= model.D*model.D';                     % observation noise covariance
-xextent = eye(d)*4;
-model.extent = xextent;
 
 % target initial state
 nbirths = length(targetTracks);
