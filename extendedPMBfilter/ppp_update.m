@@ -20,8 +20,13 @@ end
 
 ggiw_ppp.wu = wu1 + wu2;
 
-% Prune undetected PPP intensity with low weight
-idx = ggiw_ppp.wu > model.threshold_u;
+% Prune undetected PPP intensity
+idx1 = ggiw_ppp.wu > model.threshold_u;
+idx2 = -log((ggiw_ppp.beta_u./(ggiw_ppp.beta_u+1)).^ggiw_ppp.alpha_u)>1;
+idx3 = ggiw_ppp.vu > 6;
+
+idx = idx1&idx2&idx3;
+
 ggiw_ppp.wu = ggiw_ppp.wu(idx);
 ggiw_ppp.alpha_u = ggiw_ppp.alpha_u(idx);
 ggiw_ppp.beta_u = ggiw_ppp.beta_u(idx);
@@ -31,4 +36,3 @@ ggiw_ppp.vu = ggiw_ppp.vu(idx);
 ggiw_ppp.Vu = ggiw_ppp.Vu(:,:,idx);
 
 end
-
