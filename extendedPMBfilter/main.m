@@ -4,7 +4,7 @@ dbstop if error
 % VMBtype
 % Type 1: Track-oriented merging w/ greedy new tracking merging
 % Type 2: Efficient approximation using Linear Assignment
-% Type 3: Optimal assignment using Auction
+% Type 3: Optimal assignment
 % Type 4: Track-oriented merging w/o greedy new tracking merging
 
 load('ScenarioWith27targets.mat')
