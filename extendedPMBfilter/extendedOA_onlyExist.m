@@ -105,10 +105,9 @@ for j = 1:num_mb
             cost(i,ii) = BernoulliEntropy(bernoulli1,bernoulli2);
         end
     end
-    x = min(cost(:));
-    cost = cost - x;
+
     [newAssignment(j,:),totalCost(j)] = assignmentoptimal(cost);
-    totalCost(j) = totalCost(j) + (x.*sum(newAssignment(j,:)>0,2))';
+
 end
 costSum = totalCost'*Wmbm;
 
