@@ -143,7 +143,6 @@ for i = 1:n
                 end
             end
         end
-        I = 1:length(w_mixture);
         r_hat(i) = sum(w_mixture);
         
         [~,alpha_hat(i),beta_hat(i),x_hat(:,i),P_hat(:,:,i),v_hat(i),V_hat(:,:,i)] = ...
