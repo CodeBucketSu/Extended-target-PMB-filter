@@ -26,7 +26,7 @@ for i = 1:n_exist
             end
         end
     end
-    I = 1:length(w);
+
     ggiw_mb_hat.r(i) = sum(w);
     
     % GGIW merging
