@@ -175,7 +175,7 @@ for h = 1:H
             C1(h,i) = -(1-h_r(h))*log(1-r_hat(i)) - h_r(h)*log(r_hat(i));
         end
 
-        C2(h,i) = crossEntropyGaussian(h_x(:,h),h_P(:,:,h),x_hat(:,i),P_hat(:,:,i));
+        C2(h,i) = crossEntropyGaussian(h_x(1:2,h),h_P(1:2,1:2,h),x_hat(1:2,i),P_hat(1:2,1:2,i));
         C3(h,i) = crossEntropyGamma(h_alpha(h),h_beta(h),alpha_hat(i),beta_hat(i));
         C4(h,i) = crossEntropyIW(h_v(h),h_V(:,:,h),v_hat(i),V_hat(:,:,i));
 
