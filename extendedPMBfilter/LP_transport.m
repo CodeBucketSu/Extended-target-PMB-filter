@@ -5,8 +5,7 @@ c = reshape(C',H*N,1);
 beq = [ph;ones(N,1)];
 Aeq1 = kron(eye(H),ones(1,N));
 Aeq2 = repmat(eye(N),1,H);
-% replace inf with a very large number; needed by the LP solver
-c(isinf(c)) = max(c(~isinf(c)))+1e12;
+
 Aeq = [Aeq1;Aeq2];
 
 % can be largely speed up by using the Gurobi solver
