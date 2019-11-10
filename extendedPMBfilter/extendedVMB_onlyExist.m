@@ -182,6 +182,8 @@ for h = 1:H
     end
 end
 
+% replace inf with a very large number; needed by the LP solver
+C(isinf(C)) = max(C(~isinf(C)))+1e12;
 % Solve the Linear Programming
 [Cmin,phi_hat] = LP_transport(C,ph);
 
