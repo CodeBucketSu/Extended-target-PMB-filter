@@ -127,7 +127,7 @@ function cost = BernoulliEntropy(bernoulli1,bernoulli2)
         C1 = -(1-r)*log(1-r_hat) - r*log(r_hat);
     end
     C4 = crossEntropyIW(v,V,v_hat,V_hat);
-    C2 = crossEntropyGaussian(x(1:2),P(1:2,1:2),x_hat(1:2),P_hat(1:2,1:2));
+    C2 = crossEntropyGaussian(x,P,x_hat,P_hat);
     C3 = crossEntropyGamma(alpha,beta,alpha_hat,beta_hat);
     cost = C1 + r*(C2+C3+C4);
 end
